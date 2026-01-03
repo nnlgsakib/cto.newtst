@@ -1,0 +1,13 @@
+syntax = "proto3";
+package nlg.socialmedia.v1;
+
+option go_package = "nlg/x/socialmedia/types";
+
+// SocialConnection defines the SocialConnection message.
+message SocialConnection {
+  string index = 1;
+  string follower = 2;
+  string following = 3;
+  uint64 timestamp = 4;
+  string creator = 5;
+}

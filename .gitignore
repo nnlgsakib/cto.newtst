@@ -1,0 +1,48 @@
+# Vue/Frontend
+vue/node_modules
+vue/dist
+node_modules/
+dist/
+
+# Build artifacts
+release/
+build/
+*.tar.gz
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Ignite
+*.ign
+
+# Go
+*.exe
+*.test
+*.out
+coverage.out
+coverage.html
+
+# Chain data
+.nlg/
+.nlg-*/
+
+# Temp files
+*.tmp
+*.bak
+*.dot
+
+# Environment
+.env
+.env.local

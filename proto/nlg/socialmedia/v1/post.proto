@@ -1,0 +1,15 @@
+syntax = "proto3";
+package nlg.socialmedia.v1;
+
+option go_package = "nlg/x/socialmedia/types";
+
+// Post defines the Post message.
+message Post {
+  string index = 1;
+  string title = 2;
+  string content = 3;
+  string ipfs_hash = 4;
+  uint64 timestamp = 5;
+  uint64 likes_count = 6;
+  string creator = 7;
+}

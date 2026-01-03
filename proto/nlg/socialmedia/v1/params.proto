@@ -1,0 +1,13 @@
+syntax = "proto3";
+package nlg.socialmedia.v1;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "nlg/x/socialmedia/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "nlg/x/socialmedia/Params";
+  option (gogoproto.equal) = true;
+}

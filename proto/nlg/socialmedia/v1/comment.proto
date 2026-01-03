@@ -1,0 +1,14 @@
+syntax = "proto3";
+package nlg.socialmedia.v1;
+
+option go_package = "nlg/x/socialmedia/types";
+
+// Comment defines the Comment message.
+message Comment {
+  string index = 1;
+  string post_id = 2;
+  string content = 3;
+  uint64 timestamp = 4;
+  string author = 5;
+  string creator = 6;
+}

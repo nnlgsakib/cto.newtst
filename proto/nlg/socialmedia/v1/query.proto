@@ -1,0 +1,159 @@
+syntax = "proto3";
+
+package nlg.socialmedia.v1;
+
+import "amino/amino.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "nlg/socialmedia/v1/comment.proto";
+import "nlg/socialmedia/v1/params.proto";
+import "nlg/socialmedia/v1/post.proto";
+import "nlg/socialmedia/v1/profile.proto";
+import "nlg/socialmedia/v1/social_connection.proto";
+
+option go_package = "nlg/x/socialmedia/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/params";
+  }
+
+  // ListPost Queries a list of Post items.
+  rpc GetPost(QueryGetPostRequest) returns (QueryGetPostResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/post/{index}";
+  }
+
+  // ListPost defines the ListPost RPC.
+  rpc ListPost(QueryAllPostRequest) returns (QueryAllPostResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/post";
+  }
+
+  // ListProfile Queries a list of Profile items.
+  rpc GetProfile(QueryGetProfileRequest) returns (QueryGetProfileResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/profile/{index}";
+  }
+
+  // ListProfile defines the ListProfile RPC.
+  rpc ListProfile(QueryAllProfileRequest) returns (QueryAllProfileResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/profile";
+  }
+
+  // ListComment Queries a list of Comment items.
+  rpc GetComment(QueryGetCommentRequest) returns (QueryGetCommentResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/comment/{index}";
+  }
+
+  // ListComment defines the ListComment RPC.
+  rpc ListComment(QueryAllCommentRequest) returns (QueryAllCommentResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/comment";
+  }
+
+  // ListSocialConnection Queries a list of SocialConnection items.
+  rpc GetSocialConnection(QueryGetSocialConnectionRequest) returns (QueryGetSocialConnectionResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/social_connection/{index}";
+  }
+
+  // ListSocialConnection defines the ListSocialConnection RPC.
+  rpc ListSocialConnection(QueryAllSocialConnectionRequest) returns (QueryAllSocialConnectionResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/social_connection";
+  }
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
+
+// QueryGetPostRequest defines the QueryGetPostRequest message.
+message QueryGetPostRequest {
+  string index = 1;
+}
+
+// QueryGetPostResponse defines the QueryGetPostResponse message.
+message QueryGetPostResponse {
+  Post post = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllPostRequest defines the QueryAllPostRequest message.
+message QueryAllPostRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllPostResponse defines the QueryAllPostResponse message.
+message QueryAllPostResponse {
+  repeated Post post = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryGetProfileRequest defines the QueryGetProfileRequest message.
+message QueryGetProfileRequest {
+  string index = 1;
+}
+
+// QueryGetProfileResponse defines the QueryGetProfileResponse message.
+message QueryGetProfileResponse {
+  Profile profile = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllProfileRequest defines the QueryAllProfileRequest message.
+message QueryAllProfileRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllProfileResponse defines the QueryAllProfileResponse message.
+message QueryAllProfileResponse {
+  repeated Profile profile = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryGetCommentRequest defines the QueryGetCommentRequest message.
+message QueryGetCommentRequest {
+  string index = 1;
+}
+
+// QueryGetCommentResponse defines the QueryGetCommentResponse message.
+message QueryGetCommentResponse {
+  Comment comment = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllCommentRequest defines the QueryAllCommentRequest message.
+message QueryAllCommentRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllCommentResponse defines the QueryAllCommentResponse message.
+message QueryAllCommentResponse {
+  repeated Comment comment = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryGetSocialConnectionRequest defines the QueryGetSocialConnectionRequest message.
+message QueryGetSocialConnectionRequest {
+  string index = 1;
+}
+
+// QueryGetSocialConnectionResponse defines the QueryGetSocialConnectionResponse message.
+message QueryGetSocialConnectionResponse {
+  SocialConnection social_connection = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllSocialConnectionRequest defines the QueryAllSocialConnectionRequest message.
+message QueryAllSocialConnectionRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllSocialConnectionResponse defines the QueryAllSocialConnectionResponse message.
+message QueryAllSocialConnectionResponse {
+  repeated SocialConnection social_connection = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}

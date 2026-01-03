@@ -1,0 +1,23 @@
+version: 1
+validation: sovereign
+default_denom: nlg
+accounts: 
+- name: alice
+  coins:
+  - 40000000nlg
+- name: bob
+  coins:
+  - 30000000nlg
+- name: charlie
+  coins:
+  - 30000000nlg
+client:
+  openapi:
+    path: docs/static/openapi.json
+faucet:
+  name: bob
+  coins:
+  - 100000nlg
+validators:
+- name: alice
+  bonded: 20000000nlg
