@@ -24,6 +24,10 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 			Index: "0",
 		}, {Creator: sample.AccAddress(),
 			Index: "1",
+		}}, ProfileMap: []types.Profile{{Creator: sample.AccAddress(),
+			Index: "0",
+		}, {Creator: sample.AccAddress(),
+			Index: "1",
 		}}}
 	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(&socialmediaGenesis)
 }
@@ -78,6 +82,51 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgDeletePost,
 		socialmediasimulation.SimulateMsgDeletePost(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgCreateProfile          = "op_weight_msg_socialmedia"
+		defaultWeightMsgCreateProfile int = 100
+	)
+
+	var weightMsgCreateProfile int
+	simState.AppParams.GetOrGenerate(opWeightMsgCreateProfile, &weightMsgCreateProfile, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateProfile = defaultWeightMsgCreateProfile
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateProfile,
+		socialmediasimulation.SimulateMsgCreateProfile(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgUpdateProfile          = "op_weight_msg_socialmedia"
+		defaultWeightMsgUpdateProfile int = 100
+	)
+
+	var weightMsgUpdateProfile int
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateProfile, &weightMsgUpdateProfile, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateProfile = defaultWeightMsgUpdateProfile
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateProfile,
+		socialmediasimulation.SimulateMsgUpdateProfile(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgDeleteProfile          = "op_weight_msg_socialmedia"
+		defaultWeightMsgDeleteProfile int = 100
+	)
+
+	var weightMsgDeleteProfile int
+	simState.AppParams.GetOrGenerate(opWeightMsgDeleteProfile, &weightMsgDeleteProfile, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteProfile = defaultWeightMsgDeleteProfile
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteProfile,
+		socialmediasimulation.SimulateMsgDeleteProfile(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
 	))
 
 	return operations

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package nlg.socialmedia.v1;
+
+option go_package = "nlg/x/socialmedia/types";
+
+// Profile defines the Profile message.
+message Profile {
+  string index = 1;
+  string username = 2;
+  string bio = 3;
+  string avatar_ipfs_hash = 4;
+  uint64 reputation = 5;
+  uint64 followers_count = 6;
+  uint64 following_count = 7;
+  string creator = 8;
+}

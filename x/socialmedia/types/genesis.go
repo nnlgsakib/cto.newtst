@@ -6,7 +6,7 @@ import "fmt"
 func DefaultGenesis() *GenesisState {
 	return &GenesisState{
 		Params:  DefaultParams(),
-		PostMap: []Post{}}
+		PostMap: []Post{}, ProfileMap: []Profile{}}
 }
 
 // Validate performs basic genesis state validation returning an error upon any
@@ -20,6 +20,15 @@ func (gs GenesisState) Validate() error {
 			return fmt.Errorf("duplicated index for post")
 		}
 		postIndexMap[index] = struct{}{}
+	}
+	profileIndexMap := make(map[string]struct{})
+
+	for _, elem := range gs.ProfileMap {
+		index := fmt.Sprint(elem.Index)
+		if _, ok := profileIndexMap[index]; ok {
+			return fmt.Errorf("duplicated index for profile")
+		}
+		profileIndexMap[index] = struct{}{}
 	}
 
 	return gs.Params.Validate()

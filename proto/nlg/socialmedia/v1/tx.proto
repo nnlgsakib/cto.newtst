@@ -26,6 +26,15 @@ service Msg {
 
   // DeletePost defines the DeletePost RPC.
   rpc DeletePost(MsgDeletePost) returns (MsgDeletePostResponse);
+
+  // CreateProfile defines the CreateProfile RPC.
+  rpc CreateProfile(MsgCreateProfile) returns (MsgCreateProfileResponse);
+
+  // UpdateProfile defines the UpdateProfile RPC.
+  rpc UpdateProfile(MsgUpdateProfile) returns (MsgUpdateProfileResponse);
+
+  // DeleteProfile defines the DeleteProfile RPC.
+  rpc DeleteProfile(MsgDeleteProfile) returns (MsgDeleteProfileResponse);
 }
 
 // MsgUpdateParams is the Msg/UpdateParams request type.
@@ -88,3 +97,45 @@ message MsgDeletePost {
 
 // MsgDeletePostResponse defines the MsgDeletePostResponse message.
 message MsgDeletePostResponse {}
+
+// MsgCreateProfile defines the MsgCreateProfile message.
+message MsgCreateProfile {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string index = 2;
+  string username = 3;
+  string bio = 4;
+  string avatar_ipfs_hash = 5;
+  uint64 reputation = 6;
+  uint64 followers_count = 7;
+  uint64 following_count = 8;
+}
+
+// MsgCreateProfileResponse defines the MsgCreateProfileResponse message.
+message MsgCreateProfileResponse {}
+
+// MsgUpdateProfile defines the MsgUpdateProfile message.
+message MsgUpdateProfile {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string index = 2;
+  string username = 3;
+  string bio = 4;
+  string avatar_ipfs_hash = 5;
+  uint64 reputation = 6;
+  uint64 followers_count = 7;
+  uint64 following_count = 8;
+}
+
+// MsgUpdateProfileResponse defines the MsgUpdateProfileResponse message.
+message MsgUpdateProfileResponse {}
+
+// MsgDeleteProfile defines the MsgDeleteProfile message.
+message MsgDeleteProfile {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string index = 2;
+}
+
+// MsgDeleteProfileResponse defines the MsgDeleteProfileResponse message.
+message MsgDeleteProfileResponse {}

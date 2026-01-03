@@ -8,6 +8,7 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "nlg/socialmedia/v1/params.proto";
 import "nlg/socialmedia/v1/post.proto";
+import "nlg/socialmedia/v1/profile.proto";
 
 option go_package = "nlg/x/socialmedia/types";
 
@@ -26,6 +27,16 @@ service Query {
   // ListPost defines the ListPost RPC.
   rpc ListPost(QueryAllPostRequest) returns (QueryAllPostResponse) {
     option (google.api.http).get = "/nlg/socialmedia/v1/post";
+  }
+
+  // ListProfile Queries a list of Profile items.
+  rpc GetProfile(QueryGetProfileRequest) returns (QueryGetProfileResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/profile/{index}";
+  }
+
+  // ListProfile defines the ListProfile RPC.
+  rpc ListProfile(QueryAllProfileRequest) returns (QueryAllProfileResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/profile";
   }
 }
 
@@ -59,5 +70,26 @@ message QueryAllPostRequest {
 // QueryAllPostResponse defines the QueryAllPostResponse message.
 message QueryAllPostResponse {
   repeated Post post = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryGetProfileRequest defines the QueryGetProfileRequest message.
+message QueryGetProfileRequest {
+  string index = 1;
+}
+
+// QueryGetProfileResponse defines the QueryGetProfileResponse message.
+message QueryGetProfileResponse {
+  Profile profile = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllProfileRequest defines the QueryAllProfileRequest message.
+message QueryAllProfileRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllProfileResponse defines the QueryAllProfileResponse message.
+message QueryAllProfileResponse {
+  repeated Profile profile = 1 [(gogoproto.nullable) = false];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }

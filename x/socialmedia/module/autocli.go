@@ -29,6 +29,18 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Alias:          []string{"show-post"},
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
+				{
+					RpcMethod: "ListProfile",
+					Use:       "list-profile",
+					Short:     "List all profile",
+				},
+				{
+					RpcMethod:      "GetProfile",
+					Use:            "get-profile [id]",
+					Short:          "Gets a profile",
+					Alias:          []string{"show-profile"},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -56,6 +68,24 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod:      "DeletePost",
 					Use:            "delete-post [index]",
 					Short:          "Delete post",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
+				{
+					RpcMethod:      "CreateProfile",
+					Use:            "create-profile [index] [username] [bio] [avatar-ipfs-hash] [reputation] [followers-count] [following-count]",
+					Short:          "Create a new profile",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "username"}, {ProtoField: "bio"}, {ProtoField: "avatar_ipfs_hash"}, {ProtoField: "reputation"}, {ProtoField: "followers_count"}, {ProtoField: "following_count"}},
+				},
+				{
+					RpcMethod:      "UpdateProfile",
+					Use:            "update-profile [index] [username] [bio] [avatar-ipfs-hash] [reputation] [followers-count] [following-count]",
+					Short:          "Update profile",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "username"}, {ProtoField: "bio"}, {ProtoField: "avatar_ipfs_hash"}, {ProtoField: "reputation"}, {ProtoField: "followers_count"}, {ProtoField: "following_count"}},
+				},
+				{
+					RpcMethod:      "DeleteProfile",
+					Use:            "delete-profile [index]",
+					Short:          "Delete profile",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
