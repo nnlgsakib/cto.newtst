@@ -226,6 +226,21 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 		weightMsgDeleteSocialConnection,
 		socialmediasimulation.SimulateMsgDeleteSocialConnection(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
 	))
+	const (
+		opWeightMsgLikePost          = "op_weight_msg_socialmedia"
+		defaultWeightMsgLikePost int = 100
+	)
+
+	var weightMsgLikePost int
+	simState.AppParams.GetOrGenerate(opWeightMsgLikePost, &weightMsgLikePost, nil,
+		func(_ *rand.Rand) {
+			weightMsgLikePost = defaultWeightMsgLikePost
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgLikePost,
+		socialmediasimulation.SimulateMsgLikePost(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
 
 	return operations
 }

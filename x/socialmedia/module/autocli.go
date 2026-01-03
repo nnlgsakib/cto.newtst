@@ -148,6 +148,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Delete socialConnection",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
+				{
+					RpcMethod:      "LikePost",
+					Use:            "like-post [post-id]",
+					Short:          "Send a likePost tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "post_id"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},
