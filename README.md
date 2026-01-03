@@ -115,6 +115,7 @@ The chain will be available at:
 - RPC: `http://localhost:26657`
 - API: `http://localhost:1317`
 - gRPC: `localhost:9090`
+- **Web Dashboard**: `http://localhost:1317/dashboard`
 
 ### Chain Commands
 
@@ -163,6 +164,54 @@ nlgd tx socialmedia like-post "post-id" --from bob
 # Moderate content
 nlgd tx socialmedia moderate-content "content-id" "flag" --from charlie
 ```
+
+## Web Dashboard
+
+NLG Chain includes a comprehensive web dashboard that provides real-time monitoring and interaction capabilities.
+
+### Features
+
+- **Dashboard Overview**: Real-time statistics (block height, validators, token supply)
+- **Block Explorer**: Browse blocks and transactions
+- **Validator Monitor**: View active validators and their status
+- **Social Feed**: Real-time feed of decentralized social media posts
+- **API Documentation**: Interactive Swagger UI for all API endpoints
+
+### Accessing the Dashboard
+
+Start the chain and open your browser:
+```bash
+ignite chain serve
+```
+
+Then navigate to:
+```
+http://localhost:1317/dashboard
+```
+
+### Dashboard Pages
+
+1. **Main Dashboard** (`/dashboard#dashboard`)
+   - Network statistics and metrics
+   - Recent blocks and social posts
+
+2. **Blocks Explorer** (`/dashboard#blocks`)
+   - List of latest blocks
+   - Detailed block information
+
+3. **Validators** (`/dashboard#validators`)
+   - Active validator list
+   - Staking and commission info
+
+4. **Social Feed** (`/dashboard#social`)
+   - Decentralized social media posts
+   - Real-time content updates
+
+5. **API Documentation** (`/dashboard#api`)
+   - Full API reference
+   - Interactive testing
+
+For more details on the web UI, see [docs/UI_README.md](docs/UI_README.md).
 
 ## Architecture
 
