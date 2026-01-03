@@ -24,6 +24,7 @@ type Keeper struct {
 
 	bankKeeper    types.BankKeeper
 	stakingKeeper types.StakingKeeper
+	Post          collections.Map[string, types.Post]
 }
 
 func NewKeeper(
@@ -50,7 +51,7 @@ func NewKeeper(
 		bankKeeper:    bankKeeper,
 		stakingKeeper: stakingKeeper,
 		Params:        collections.NewItem(sb, types.ParamsKey, "params", codec.CollValue[types.Params](cdc)),
-	}
+		Post:          collections.NewMap(sb, types.PostKey, "post", collections.StringKey, codec.CollValue[types.Post](cdc))}
 
 	schema, err := sb.Build()
 	if err != nil {

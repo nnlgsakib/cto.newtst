@@ -17,6 +17,18 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:       "params",
 					Short:     "Shows the parameters of the module",
 				},
+				{
+					RpcMethod: "ListPost",
+					Use:       "list-post",
+					Short:     "List all post",
+				},
+				{
+					RpcMethod:      "GetPost",
+					Use:            "get-post [id]",
+					Short:          "Gets a post",
+					Alias:          []string{"show-post"},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -27,6 +39,24 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				{
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
+				},
+				{
+					RpcMethod:      "CreatePost",
+					Use:            "create-post [index] [title] [content] [ipfs-hash] [timestamp] [likes-count]",
+					Short:          "Create a new post",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "title"}, {ProtoField: "content"}, {ProtoField: "ipfs_hash"}, {ProtoField: "timestamp"}, {ProtoField: "likes_count"}},
+				},
+				{
+					RpcMethod:      "UpdatePost",
+					Use:            "update-post [index] [title] [content] [ipfs-hash] [timestamp] [likes-count]",
+					Short:          "Update post",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "title"}, {ProtoField: "content"}, {ProtoField: "ipfs_hash"}, {ProtoField: "timestamp"}, {ProtoField: "likes_count"}},
+				},
+				{
+					RpcMethod:      "DeletePost",
+					Use:            "delete-post [index]",
+					Short:          "Delete post",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
