@@ -154,6 +154,12 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:          "Send a likePost tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "post_id"}},
 				},
+				{
+					RpcMethod:      "ModerateContent",
+					Use:            "moderate-content [content-id] [vote-type]",
+					Short:          "Send a moderateContent tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "content_id"}, {ProtoField: "vote_type"}},
+				},
 				// this line is used by ignite scaffolding # autocli/tx
 			},
 		},

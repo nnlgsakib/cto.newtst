@@ -56,6 +56,9 @@ service Msg {
 
   // LikePost defines the LikePost RPC.
   rpc LikePost(MsgLikePost) returns (MsgLikePostResponse);
+
+  // ModerateContent defines the ModerateContent RPC.
+  rpc ModerateContent(MsgModerateContent) returns (MsgModerateContentResponse);
 }
 
 // MsgUpdateParams is the Msg/UpdateParams request type.
@@ -244,3 +247,14 @@ message MsgLikePost {
 
 // MsgLikePostResponse defines the MsgLikePostResponse message.
 message MsgLikePostResponse {}
+
+// MsgModerateContent defines the MsgModerateContent message.
+message MsgModerateContent {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string content_id = 2;
+  string vote_type = 3;
+}
+
+// MsgModerateContentResponse defines the MsgModerateContentResponse message.
+message MsgModerateContentResponse {}
