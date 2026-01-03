@@ -1175,6 +1175,324 @@ func (m *MsgDeleteCommentResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgDeleteCommentResponse proto.InternalMessageInfo
 
+// MsgCreateSocialConnection defines the MsgCreateSocialConnection message.
+type MsgCreateSocialConnection struct {
+	Creator   string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Index     string `protobuf:"bytes,2,opt,name=index,proto3" json:"index,omitempty"`
+	Follower  string `protobuf:"bytes,3,opt,name=follower,proto3" json:"follower,omitempty"`
+	Following string `protobuf:"bytes,4,opt,name=following,proto3" json:"following,omitempty"`
+	Timestamp uint64 `protobuf:"varint,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+}
+
+func (m *MsgCreateSocialConnection) Reset()         { *m = MsgCreateSocialConnection{} }
+func (m *MsgCreateSocialConnection) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateSocialConnection) ProtoMessage()    {}
+func (*MsgCreateSocialConnection) Descriptor() ([]byte, []int) {
+	return fileDescriptor_851b5d75ff0c8549, []int{20}
+}
+func (m *MsgCreateSocialConnection) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateSocialConnection) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateSocialConnection.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateSocialConnection) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateSocialConnection.Merge(m, src)
+}
+func (m *MsgCreateSocialConnection) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateSocialConnection) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateSocialConnection.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateSocialConnection proto.InternalMessageInfo
+
+func (m *MsgCreateSocialConnection) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgCreateSocialConnection) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+func (m *MsgCreateSocialConnection) GetFollower() string {
+	if m != nil {
+		return m.Follower
+	}
+	return ""
+}
+
+func (m *MsgCreateSocialConnection) GetFollowing() string {
+	if m != nil {
+		return m.Following
+	}
+	return ""
+}
+
+func (m *MsgCreateSocialConnection) GetTimestamp() uint64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+// MsgCreateSocialConnectionResponse defines the MsgCreateSocialConnectionResponse message.
+type MsgCreateSocialConnectionResponse struct {
+}
+
+func (m *MsgCreateSocialConnectionResponse) Reset()         { *m = MsgCreateSocialConnectionResponse{} }
+func (m *MsgCreateSocialConnectionResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgCreateSocialConnectionResponse) ProtoMessage()    {}
+func (*MsgCreateSocialConnectionResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_851b5d75ff0c8549, []int{21}
+}
+func (m *MsgCreateSocialConnectionResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgCreateSocialConnectionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgCreateSocialConnectionResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgCreateSocialConnectionResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgCreateSocialConnectionResponse.Merge(m, src)
+}
+func (m *MsgCreateSocialConnectionResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgCreateSocialConnectionResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgCreateSocialConnectionResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgCreateSocialConnectionResponse proto.InternalMessageInfo
+
+// MsgUpdateSocialConnection defines the MsgUpdateSocialConnection message.
+type MsgUpdateSocialConnection struct {
+	Creator   string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Index     string `protobuf:"bytes,2,opt,name=index,proto3" json:"index,omitempty"`
+	Follower  string `protobuf:"bytes,3,opt,name=follower,proto3" json:"follower,omitempty"`
+	Following string `protobuf:"bytes,4,opt,name=following,proto3" json:"following,omitempty"`
+	Timestamp uint64 `protobuf:"varint,5,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+}
+
+func (m *MsgUpdateSocialConnection) Reset()         { *m = MsgUpdateSocialConnection{} }
+func (m *MsgUpdateSocialConnection) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateSocialConnection) ProtoMessage()    {}
+func (*MsgUpdateSocialConnection) Descriptor() ([]byte, []int) {
+	return fileDescriptor_851b5d75ff0c8549, []int{22}
+}
+func (m *MsgUpdateSocialConnection) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateSocialConnection) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateSocialConnection.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateSocialConnection) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateSocialConnection.Merge(m, src)
+}
+func (m *MsgUpdateSocialConnection) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateSocialConnection) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateSocialConnection.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateSocialConnection proto.InternalMessageInfo
+
+func (m *MsgUpdateSocialConnection) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgUpdateSocialConnection) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+func (m *MsgUpdateSocialConnection) GetFollower() string {
+	if m != nil {
+		return m.Follower
+	}
+	return ""
+}
+
+func (m *MsgUpdateSocialConnection) GetFollowing() string {
+	if m != nil {
+		return m.Following
+	}
+	return ""
+}
+
+func (m *MsgUpdateSocialConnection) GetTimestamp() uint64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+// MsgUpdateSocialConnectionResponse defines the MsgUpdateSocialConnectionResponse message.
+type MsgUpdateSocialConnectionResponse struct {
+}
+
+func (m *MsgUpdateSocialConnectionResponse) Reset()         { *m = MsgUpdateSocialConnectionResponse{} }
+func (m *MsgUpdateSocialConnectionResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgUpdateSocialConnectionResponse) ProtoMessage()    {}
+func (*MsgUpdateSocialConnectionResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_851b5d75ff0c8549, []int{23}
+}
+func (m *MsgUpdateSocialConnectionResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgUpdateSocialConnectionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgUpdateSocialConnectionResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgUpdateSocialConnectionResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgUpdateSocialConnectionResponse.Merge(m, src)
+}
+func (m *MsgUpdateSocialConnectionResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgUpdateSocialConnectionResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgUpdateSocialConnectionResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgUpdateSocialConnectionResponse proto.InternalMessageInfo
+
+// MsgDeleteSocialConnection defines the MsgDeleteSocialConnection message.
+type MsgDeleteSocialConnection struct {
+	Creator string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Index   string `protobuf:"bytes,2,opt,name=index,proto3" json:"index,omitempty"`
+}
+
+func (m *MsgDeleteSocialConnection) Reset()         { *m = MsgDeleteSocialConnection{} }
+func (m *MsgDeleteSocialConnection) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteSocialConnection) ProtoMessage()    {}
+func (*MsgDeleteSocialConnection) Descriptor() ([]byte, []int) {
+	return fileDescriptor_851b5d75ff0c8549, []int{24}
+}
+func (m *MsgDeleteSocialConnection) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteSocialConnection) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteSocialConnection.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteSocialConnection) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteSocialConnection.Merge(m, src)
+}
+func (m *MsgDeleteSocialConnection) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteSocialConnection) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteSocialConnection.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteSocialConnection proto.InternalMessageInfo
+
+func (m *MsgDeleteSocialConnection) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgDeleteSocialConnection) GetIndex() string {
+	if m != nil {
+		return m.Index
+	}
+	return ""
+}
+
+// MsgDeleteSocialConnectionResponse defines the MsgDeleteSocialConnectionResponse message.
+type MsgDeleteSocialConnectionResponse struct {
+}
+
+func (m *MsgDeleteSocialConnectionResponse) Reset()         { *m = MsgDeleteSocialConnectionResponse{} }
+func (m *MsgDeleteSocialConnectionResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgDeleteSocialConnectionResponse) ProtoMessage()    {}
+func (*MsgDeleteSocialConnectionResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_851b5d75ff0c8549, []int{25}
+}
+func (m *MsgDeleteSocialConnectionResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgDeleteSocialConnectionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgDeleteSocialConnectionResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgDeleteSocialConnectionResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgDeleteSocialConnectionResponse.Merge(m, src)
+}
+func (m *MsgDeleteSocialConnectionResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgDeleteSocialConnectionResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgDeleteSocialConnectionResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgDeleteSocialConnectionResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*MsgUpdateParams)(nil), "nlg.socialmedia.v1.MsgUpdateParams")
 	proto.RegisterType((*MsgUpdateParamsResponse)(nil), "nlg.socialmedia.v1.MsgUpdateParamsResponse")
@@ -1196,65 +1514,78 @@ func init() {
 	proto.RegisterType((*MsgUpdateCommentResponse)(nil), "nlg.socialmedia.v1.MsgUpdateCommentResponse")
 	proto.RegisterType((*MsgDeleteComment)(nil), "nlg.socialmedia.v1.MsgDeleteComment")
 	proto.RegisterType((*MsgDeleteCommentResponse)(nil), "nlg.socialmedia.v1.MsgDeleteCommentResponse")
+	proto.RegisterType((*MsgCreateSocialConnection)(nil), "nlg.socialmedia.v1.MsgCreateSocialConnection")
+	proto.RegisterType((*MsgCreateSocialConnectionResponse)(nil), "nlg.socialmedia.v1.MsgCreateSocialConnectionResponse")
+	proto.RegisterType((*MsgUpdateSocialConnection)(nil), "nlg.socialmedia.v1.MsgUpdateSocialConnection")
+	proto.RegisterType((*MsgUpdateSocialConnectionResponse)(nil), "nlg.socialmedia.v1.MsgUpdateSocialConnectionResponse")
+	proto.RegisterType((*MsgDeleteSocialConnection)(nil), "nlg.socialmedia.v1.MsgDeleteSocialConnection")
+	proto.RegisterType((*MsgDeleteSocialConnectionResponse)(nil), "nlg.socialmedia.v1.MsgDeleteSocialConnectionResponse")
 }
 
 func init() { proto.RegisterFile("nlg/socialmedia/v1/tx.proto", fileDescriptor_851b5d75ff0c8549) }
 
 var fileDescriptor_851b5d75ff0c8549 = []byte{
-	// 834 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x57, 0xbd, 0x6e, 0x13, 0x4b,
-	0x14, 0xf6, 0x26, 0xb1, 0x1d, 0x4f, 0x7e, 0xef, 0x28, 0xf7, 0x7a, 0xb3, 0xb9, 0x72, 0x12, 0x13,
-	0x09, 0x13, 0xc0, 0x56, 0x02, 0xa2, 0x88, 0x44, 0x41, 0x42, 0x41, 0x8a, 0x48, 0xc8, 0x88, 0x26,
-	0x8d, 0x99, 0xd8, 0x93, 0xf5, 0xc0, 0xee, 0xce, 0x6a, 0x67, 0x1c, 0x92, 0x0e, 0x51, 0x52, 0xf1,
-	0x18, 0x94, 0x29, 0x52, 0x53, 0xa7, 0x8c, 0xa0, 0xa1, 0x42, 0x51, 0x52, 0xe4, 0x01, 0x78, 0x01,
-	0x34, 0xbb, 0xb3, 0xde, 0x1f, 0x6f, 0x76, 0x83, 0xe4, 0x0a, 0x68, 0x2c, 0x9f, 0x73, 0xbe, 0x99,
-	0x73, 0xce, 0xf7, 0xcd, 0xdf, 0x82, 0x05, 0xcb, 0xd0, 0x1b, 0x8c, 0xb6, 0x09, 0x32, 0x4c, 0xdc,
-	0x21, 0xa8, 0x71, 0xb0, 0xd6, 0xe0, 0x87, 0x75, 0xdb, 0xa1, 0x9c, 0x42, 0x68, 0x19, 0x7a, 0x3d,
-	0x14, 0xac, 0x1f, 0xac, 0x69, 0xff, 0x20, 0x93, 0x58, 0xb4, 0xe1, 0xfe, 0x7a, 0x30, 0xad, 0xdc,
-	0xa6, 0xcc, 0xa4, 0xac, 0x61, 0x32, 0x5d, 0x0c, 0x37, 0x99, 0x2e, 0x03, 0xf3, 0x5e, 0xa0, 0xe5,
-	0x5a, 0x0d, 0xcf, 0x90, 0xa1, 0x39, 0x9d, 0xea, 0xd4, 0xf3, 0x8b, 0x7f, 0xd2, 0xbb, 0x98, 0x50,
-	0x8d, 0x8d, 0x1c, 0x64, 0xca, 0x61, 0xd5, 0xcf, 0x0a, 0x98, 0xd9, 0x61, 0xfa, 0x4b, 0xbb, 0x83,
-	0x38, 0x7e, 0xee, 0x46, 0xe0, 0x23, 0x50, 0x42, 0x3d, 0xde, 0xa5, 0x0e, 0xe1, 0x47, 0xaa, 0xb2,
-	0xa4, 0xd4, 0x4a, 0x9b, 0xea, 0x97, 0x93, 0xfb, 0x73, 0x32, 0xdf, 0x93, 0x4e, 0xc7, 0xc1, 0x8c,
-	0xbd, 0xe0, 0x0e, 0xb1, 0xf4, 0x66, 0x00, 0x85, 0x8f, 0x41, 0xc1, 0x9b, 0x5b, 0x1d, 0x59, 0x52,
-	0x6a, 0x13, 0xeb, 0x5a, 0x7d, 0xb0, 0xdd, 0xba, 0x97, 0x63, 0xb3, 0x74, 0xfa, 0x7d, 0x31, 0xf7,
-	0xe9, 0xea, 0x78, 0x55, 0x69, 0xca, 0x41, 0x1b, 0x0f, 0xdf, 0x5f, 0x1d, 0xaf, 0x06, 0xd3, 0x7d,
-	0xb8, 0x3a, 0x5e, 0x5d, 0x16, 0xe5, 0x1f, 0x46, 0x1a, 0x88, 0x15, 0x5b, 0x9d, 0x07, 0xe5, 0x98,
-	0xab, 0x89, 0x99, 0x4d, 0x2d, 0x86, 0xab, 0x3f, 0x14, 0x30, 0xb5, 0xc3, 0xf4, 0x2d, 0x07, 0x8b,
-	0x18, 0x65, 0x1c, 0xae, 0x83, 0x62, 0x5b, 0x58, 0xd4, 0xc9, 0xec, 0xcb, 0x07, 0xc2, 0x39, 0x90,
-	0x27, 0x56, 0x07, 0x1f, 0xba, 0x4d, 0x95, 0x9a, 0x9e, 0x21, 0xbc, 0x9c, 0x70, 0x03, 0xab, 0xa3,
-	0x9e, 0xd7, 0x35, 0xa0, 0x0a, 0x8a, 0x6d, 0x6a, 0x71, 0x6c, 0x71, 0x75, 0xcc, 0xf5, 0xfb, 0x26,
-	0x5c, 0x00, 0x25, 0x62, 0xef, 0xb3, 0x56, 0x17, 0xb1, 0xae, 0x9a, 0x77, 0x63, 0xe3, 0xc2, 0xf1,
-	0x0c, 0xb1, 0x2e, 0xfc, 0x1f, 0x94, 0x38, 0x31, 0x31, 0xe3, 0xc8, 0xb4, 0xd5, 0xc2, 0x92, 0x52,
-	0x1b, 0x6b, 0x06, 0x0e, 0xb8, 0x08, 0x26, 0x0c, 0xf2, 0x06, 0xb3, 0x56, 0x9b, 0xf6, 0x2c, 0xae,
-	0x16, 0xdd, 0x38, 0x70, 0x5d, 0x5b, 0xc2, 0xb3, 0x31, 0x29, 0x88, 0xf3, 0xeb, 0xad, 0x96, 0xc1,
-	0xbf, 0x91, 0xa6, 0xe3, 0x74, 0x48, 0xaa, 0xfe, 0x2c, 0x3a, 0x82, 0xa6, 0xfb, 0x74, 0xe8, 0x2e,
-	0x1b, 0x4f, 0xb1, 0x81, 0x87, 0xcd, 0x46, 0x62, 0x05, 0x41, 0xa2, 0x7e, 0x05, 0x27, 0x23, 0x60,
-	0x36, 0x90, 0xca, 0xa1, 0xfb, 0xc4, 0xc0, 0x43, 0xd4, 0x44, 0x03, 0xe3, 0x3d, 0x86, 0x1d, 0x0b,
-	0x99, 0xbe, 0x2c, 0x7d, 0x1b, 0xce, 0x82, 0xd1, 0x3d, 0x42, 0xa5, 0x2a, 0xe2, 0x2f, 0xac, 0x81,
-	0x59, 0x74, 0x80, 0x38, 0x72, 0x5a, 0x71, 0x61, 0xa6, 0x3d, 0xff, 0xb6, 0x2f, 0x4f, 0x05, 0x00,
-	0x07, 0xdb, 0x3d, 0x8e, 0x38, 0xa1, 0x96, 0xd4, 0x27, 0xe4, 0x81, 0xb7, 0xc1, 0xcc, 0x3e, 0x35,
-	0x0c, 0xfa, 0x16, 0x3b, 0x51, 0x91, 0xa6, 0xfb, 0x6e, 0x57, 0xa8, 0x00, 0x48, 0x2c, 0x5d, 0x02,
-	0xc7, 0xc3, 0x40, 0x62, 0xe9, 0x49, 0x8a, 0x6a, 0x40, 0x8d, 0xb3, 0x16, 0xa7, 0x54, 0xca, 0xfd,
-	0x97, 0xd2, 0x5f, 0xa2, 0x34, 0xc2, 0x5a, 0x9f, 0xd2, 0xd7, 0x2e, 0xa3, 0x72, 0xf9, 0x0e, 0x9b,
-	0xd1, 0xc4, 0x3a, 0x22, 0xb9, 0xfa, 0x75, 0x7c, 0x55, 0x42, 0xbb, 0x65, 0x8b, 0x9a, 0xa6, 0x38,
-	0x47, 0x86, 0x27, 0x6d, 0x19, 0x14, 0x6d, 0xca, 0x78, 0x8b, 0x74, 0xa4, 0xb2, 0x05, 0x61, 0x6e,
-	0x77, 0x52, 0x0e, 0xb1, 0xc8, 0x39, 0x95, 0x8f, 0x9f, 0x53, 0xff, 0x81, 0x82, 0x77, 0x97, 0xb9,
-	0x7a, 0x96, 0x9a, 0xd2, 0x4a, 0x59, 0xcc, 0xb2, 0xa9, 0x78, 0xc7, 0x9e, 0x2c, 0xbf, 0x59, 0xc7,
-	0x91, 0xa6, 0x12, 0xd7, 0xda, 0xd0, 0x1b, 0x4e, 0x59, 0x6b, 0xb1, 0x3a, 0xd6, 0xcf, 0x8b, 0x60,
-	0x74, 0x87, 0xe9, 0xf0, 0x15, 0x98, 0x8c, 0xbc, 0x8c, 0x6e, 0x25, 0xbd, 0x68, 0x62, 0xcf, 0x0f,
-	0xed, 0xee, 0x0d, 0x40, 0x7e, 0x26, 0xb8, 0x0b, 0x40, 0xe8, 0x7d, 0xb2, 0x7c, 0xcd, 0xd0, 0x00,
-	0xa2, 0xdd, 0xc9, 0x84, 0x84, 0xe7, 0x0e, 0x5d, 0xf6, 0xcb, 0xe9, 0x65, 0xa5, 0xcd, 0x3d, 0x78,
-	0x7b, 0x8a, 0xb9, 0x43, 0x57, 0xe7, 0x75, 0x73, 0x07, 0x90, 0x6b, 0xe7, 0x1e, 0xbc, 0x17, 0x61,
-	0x1b, 0x4c, 0x45, 0xef, 0xc4, 0x95, 0xf4, 0x9e, 0x3d, 0x94, 0x76, 0xef, 0x26, 0xa8, 0x70, 0x92,
-	0xe8, 0x2d, 0xb1, 0x92, 0xde, 0x7c, 0x46, 0x92, 0xc4, 0xb3, 0x53, 0x24, 0x89, 0x1e, 0x9c, 0x2b,
-	0xe9, 0x2c, 0x64, 0x24, 0x49, 0x3c, 0x18, 0x03, 0xba, 0xfc, 0x1d, 0x93, 0x4e, 0x97, 0x44, 0x65,
-	0xd0, 0x15, 0xdb, 0x11, 0x01, 0x5d, 0x59, 0x49, 0x22, 0xa8, 0x0c, 0xba, 0x12, 0x92, 0x44, 0xf7,
-	0x7e, 0x3a, 0x5d, 0x59, 0x49, 0x12, 0xf7, 0xb6, 0x96, 0x7f, 0x27, 0xbe, 0x3a, 0x36, 0xd7, 0x4e,
-	0x2f, 0x2a, 0xca, 0xd9, 0x45, 0x45, 0x39, 0xbf, 0xa8, 0x28, 0x1f, 0x2f, 0x2b, 0xb9, 0xb3, 0xcb,
-	0x4a, 0xee, 0xdb, 0x65, 0x25, 0xb7, 0x5b, 0x1e, 0xfc, 0xe8, 0xe0, 0x47, 0x36, 0x66, 0x7b, 0x05,
-	0xf7, 0x93, 0xe9, 0xc1, 0xcf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xb7, 0x80, 0xe9, 0x90, 0xe3, 0x0d,
-	0x00, 0x00,
+	// 952 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x58, 0xbd, 0x6f, 0x23, 0x45,
+	0x14, 0xcf, 0x5e, 0x2e, 0x4e, 0xfc, 0xee, 0x2b, 0x8c, 0xc2, 0x79, 0xb3, 0x87, 0x9c, 0x8f, 0x8b,
+	0x44, 0x08, 0xc4, 0x56, 0xc2, 0x47, 0x71, 0x12, 0x05, 0x31, 0x05, 0x57, 0x44, 0x42, 0x3e, 0xd1,
+	0x5c, 0x63, 0xf6, 0xec, 0xc9, 0x7a, 0x60, 0x77, 0x67, 0xb5, 0x33, 0x0e, 0xb9, 0x06, 0x21, 0x4a,
+	0x2a, 0xfe, 0x0c, 0x4a, 0x17, 0x57, 0x53, 0x9f, 0x44, 0x73, 0x82, 0x86, 0x0a, 0x9d, 0x92, 0xc2,
+	0x7f, 0x00, 0xff, 0x00, 0x9a, 0xd9, 0xd9, 0x4f, 0xaf, 0x67, 0x7d, 0x92, 0x69, 0x02, 0x8d, 0xe5,
+	0xf7, 0xe6, 0xed, 0xbc, 0xf7, 0xfb, 0xfd, 0x66, 0xdf, 0x3c, 0x2d, 0x3c, 0xf0, 0x5d, 0xa7, 0xcd,
+	0x68, 0x9f, 0xd8, 0xae, 0x87, 0x07, 0xc4, 0x6e, 0x9f, 0x1f, 0xb5, 0xf9, 0x45, 0x2b, 0x08, 0x29,
+	0xa7, 0x08, 0xf9, 0xae, 0xd3, 0xca, 0x2c, 0xb6, 0xce, 0x8f, 0xac, 0xb7, 0x6c, 0x8f, 0xf8, 0xb4,
+	0x2d, 0x7f, 0xa3, 0x30, 0xab, 0xd1, 0xa7, 0xcc, 0xa3, 0xac, 0xed, 0x31, 0x47, 0x3c, 0xee, 0x31,
+	0x47, 0x2d, 0x6c, 0x46, 0x0b, 0x3d, 0x69, 0xb5, 0x23, 0x43, 0x2d, 0x6d, 0x38, 0xd4, 0xa1, 0x91,
+	0x5f, 0xfc, 0x53, 0xde, 0xad, 0x92, 0x6a, 0x02, 0x3b, 0xb4, 0x3d, 0xf5, 0xd8, 0xee, 0xaf, 0x06,
+	0xdc, 0x3b, 0x65, 0xce, 0x57, 0xc1, 0xc0, 0xe6, 0xf8, 0x4b, 0xb9, 0x82, 0x3e, 0x81, 0xba, 0x3d,
+	0xe2, 0x43, 0x1a, 0x12, 0xfe, 0xdc, 0x34, 0xb6, 0x8d, 0xfd, 0xfa, 0x89, 0xf9, 0xfb, 0x8b, 0xc3,
+	0x0d, 0x95, 0xef, 0xb3, 0xc1, 0x20, 0xc4, 0x8c, 0x3d, 0xe1, 0x21, 0xf1, 0x9d, 0x6e, 0x1a, 0x8a,
+	0x3e, 0x85, 0x5a, 0xb4, 0xb7, 0x79, 0x63, 0xdb, 0xd8, 0xbf, 0x75, 0x6c, 0xb5, 0xa6, 0xe1, 0xb6,
+	0xa2, 0x1c, 0x27, 0xf5, 0x97, 0x7f, 0x6d, 0x2d, 0xfd, 0x32, 0x19, 0x1f, 0x18, 0x5d, 0xf5, 0xd0,
+	0xa3, 0x8f, 0x7e, 0x9c, 0x8c, 0x0f, 0xd2, 0xed, 0x7e, 0x9a, 0x8c, 0x0f, 0x76, 0x44, 0xf9, 0x17,
+	0x39, 0x00, 0x85, 0x62, 0x77, 0x37, 0xa1, 0x51, 0x70, 0x75, 0x31, 0x0b, 0xa8, 0xcf, 0xf0, 0xee,
+	0xdf, 0x06, 0xdc, 0x39, 0x65, 0x4e, 0x27, 0xc4, 0x62, 0x8d, 0x32, 0x8e, 0x8e, 0x61, 0xb5, 0x2f,
+	0x2c, 0x1a, 0x56, 0xe2, 0x8a, 0x03, 0xd1, 0x06, 0xac, 0x10, 0x7f, 0x80, 0x2f, 0x24, 0xa8, 0x7a,
+	0x37, 0x32, 0x84, 0x97, 0x13, 0xee, 0x62, 0x73, 0x39, 0xf2, 0x4a, 0x03, 0x99, 0xb0, 0xda, 0xa7,
+	0x3e, 0xc7, 0x3e, 0x37, 0x6f, 0x4a, 0x7f, 0x6c, 0xa2, 0x07, 0x50, 0x27, 0xc1, 0x19, 0xeb, 0x0d,
+	0x6d, 0x36, 0x34, 0x57, 0xe4, 0xda, 0x9a, 0x70, 0x7c, 0x61, 0xb3, 0x21, 0x7a, 0x07, 0xea, 0x9c,
+	0x78, 0x98, 0x71, 0xdb, 0x0b, 0xcc, 0xda, 0xb6, 0xb1, 0x7f, 0xb3, 0x9b, 0x3a, 0xd0, 0x16, 0xdc,
+	0x72, 0xc9, 0xb7, 0x98, 0xf5, 0xfa, 0x74, 0xe4, 0x73, 0x73, 0x55, 0xae, 0x83, 0x74, 0x75, 0x84,
+	0xe7, 0xd1, 0x6d, 0x41, 0x5c, 0x5c, 0xef, 0x6e, 0x03, 0xde, 0xce, 0x81, 0x2e, 0xd2, 0xa1, 0xa8,
+	0xfa, 0x6f, 0xd1, 0x91, 0x82, 0x4e, 0xe8, 0x70, 0x24, 0x1b, 0x9f, 0x63, 0x17, 0x2f, 0x9a, 0x8d,
+	0xd2, 0x0a, 0xd2, 0x44, 0x49, 0x05, 0x2f, 0x6e, 0xc0, 0x7a, 0x2a, 0x55, 0x48, 0xcf, 0x88, 0x8b,
+	0x17, 0xa8, 0x89, 0x05, 0x6b, 0x23, 0x86, 0x43, 0xdf, 0xf6, 0x62, 0x59, 0x12, 0x1b, 0xad, 0xc3,
+	0xf2, 0x33, 0x42, 0x95, 0x2a, 0xe2, 0x2f, 0xda, 0x87, 0x75, 0xfb, 0xdc, 0xe6, 0x76, 0xd8, 0x2b,
+	0x0a, 0x73, 0x37, 0xf2, 0x3f, 0x8e, 0xe5, 0x69, 0x02, 0x84, 0x38, 0x18, 0x71, 0x9b, 0x13, 0xea,
+	0x2b, 0x7d, 0x32, 0x1e, 0xf4, 0x2e, 0xdc, 0x3b, 0xa3, 0xae, 0x4b, 0xbf, 0xc3, 0x61, 0x5e, 0xa4,
+	0xbb, 0x89, 0x5b, 0x0a, 0x95, 0x06, 0x12, 0xdf, 0x51, 0x81, 0x6b, 0xd9, 0x40, 0xe2, 0x3b, 0x65,
+	0x8a, 0x5a, 0x60, 0x16, 0x59, 0x2b, 0x52, 0xaa, 0xe4, 0xfe, 0x9f, 0xd2, 0x37, 0xa2, 0x34, 0xc7,
+	0x5a, 0x42, 0xe9, 0x37, 0x92, 0x51, 0x75, 0x7c, 0x17, 0xcd, 0x68, 0x69, 0x1d, 0xb9, 0x5c, 0x49,
+	0x1d, 0x7f, 0x18, 0x99, 0xb7, 0xa5, 0x43, 0x3d, 0x4f, 0xf4, 0x91, 0xc5, 0x49, 0xdb, 0x80, 0xd5,
+	0x80, 0x32, 0xde, 0x23, 0x03, 0xa5, 0x6c, 0x4d, 0x98, 0x8f, 0x07, 0x9a, 0x26, 0x96, 0xeb, 0x53,
+	0x2b, 0xc5, 0x3e, 0x75, 0x1f, 0x6a, 0xd1, 0x5d, 0x26, 0xf5, 0xac, 0x77, 0x95, 0xa5, 0x39, 0xcc,
+	0x0a, 0x54, 0x11, 0x71, 0x24, 0xcb, 0x35, 0x43, 0x9c, 0x03, 0x55, 0x7a, 0xd6, 0x16, 0x0e, 0x58,
+	0x73, 0xd6, 0x8a, 0x75, 0xfc, 0x66, 0xc0, 0x66, 0x22, 0xcb, 0x13, 0x39, 0x7d, 0x74, 0xa8, 0xef,
+	0xe3, 0xbe, 0x7c, 0x1b, 0x17, 0xda, 0x4f, 0xe2, 0x17, 0x38, 0xee, 0x27, 0xb1, 0x2d, 0xb8, 0x4e,
+	0xde, 0x59, 0xa5, 0x43, 0xea, 0xd0, 0x2b, 0x51, 0x40, 0xfa, 0x10, 0x76, 0x66, 0x82, 0x29, 0x42,
+	0x8e, 0x74, 0xb9, 0x26, 0x90, 0xcb, 0xc1, 0x24, 0x90, 0x99, 0x44, 0x1c, 0x9d, 0x80, 0x7f, 0x0f,
+	0x71, 0x69, 0x65, 0xe5, 0x49, 0xe3, 0xca, 0x8e, 0x5f, 0x03, 0x2c, 0x9f, 0x32, 0x07, 0x7d, 0x0d,
+	0xb7, 0x73, 0x93, 0xf9, 0xc3, 0xb2, 0x89, 0xba, 0x30, 0xfe, 0x5a, 0xef, 0xcf, 0x11, 0x14, 0x67,
+	0x42, 0x4f, 0x01, 0x32, 0xf3, 0xf1, 0xce, 0x8c, 0x47, 0xd3, 0x10, 0xeb, 0xbd, 0xca, 0x90, 0xec,
+	0xde, 0x99, 0x61, 0x73, 0x47, 0x5f, 0x96, 0x6e, 0xef, 0xe9, 0xe9, 0x4d, 0xec, 0x9d, 0x19, 0xdd,
+	0x66, 0xed, 0x9d, 0x86, 0xcc, 0xdc, 0x7b, 0x7a, 0x2e, 0x43, 0x7d, 0xb8, 0x93, 0x9f, 0xc9, 0xf6,
+	0xf4, 0x98, 0xa3, 0x28, 0xeb, 0x83, 0x79, 0xa2, 0xb2, 0x49, 0xf2, 0x53, 0xca, 0x9e, 0x1e, 0x7c,
+	0x45, 0x92, 0xd2, 0xbb, 0x5b, 0x24, 0xc9, 0x5f, 0xdc, 0x7b, 0x7a, 0x16, 0x2a, 0x92, 0x94, 0x5e,
+	0xcc, 0x29, 0x5d, 0x71, 0xc7, 0xd6, 0xd3, 0xa5, 0xa2, 0x2a, 0xe8, 0x2a, 0x74, 0xe4, 0x94, 0xae,
+	0xaa, 0x24, 0xb9, 0xa8, 0x0a, 0xba, 0x4a, 0x92, 0xe4, 0xef, 0x1e, 0x3d, 0x5d, 0x55, 0x49, 0x4a,
+	0xef, 0x16, 0xf4, 0x3d, 0xdc, 0x9f, 0x71, 0xaf, 0x1c, 0x6a, 0x19, 0x29, 0x86, 0x5b, 0x1f, 0xbf,
+	0x51, 0x78, 0x36, 0xff, 0x8c, 0x26, 0x7f, 0xa8, 0x25, 0x6b, 0xee, 0xfc, 0xfa, 0xae, 0x2b, 0xf2,
+	0xcf, 0x68, 0xb9, 0x87, 0x5a, 0x1e, 0xe7, 0xce, 0xaf, 0xef, 0xad, 0xd6, 0xca, 0x0f, 0x93, 0xf1,
+	0x81, 0x71, 0x72, 0xf4, 0xf2, 0xb2, 0x69, 0xbc, 0xba, 0x6c, 0x1a, 0xaf, 0x2f, 0x9b, 0xc6, 0xcf,
+	0x57, 0xcd, 0xa5, 0x57, 0x57, 0xcd, 0xa5, 0x3f, 0xaf, 0x9a, 0x4b, 0x4f, 0x1b, 0xd3, 0x1f, 0x1d,
+	0xf8, 0xf3, 0x00, 0xb3, 0x67, 0x35, 0xf9, 0xc9, 0xe4, 0xc3, 0x7f, 0x02, 0x00, 0x00, 0xff, 0xff,
+	0x26, 0x00, 0xc0, 0x5a, 0xe3, 0x11, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1290,6 +1621,12 @@ type MsgClient interface {
 	UpdateComment(ctx context.Context, in *MsgUpdateComment, opts ...grpc.CallOption) (*MsgUpdateCommentResponse, error)
 	// DeleteComment defines the DeleteComment RPC.
 	DeleteComment(ctx context.Context, in *MsgDeleteComment, opts ...grpc.CallOption) (*MsgDeleteCommentResponse, error)
+	// CreateSocialConnection defines the CreateSocialConnection RPC.
+	CreateSocialConnection(ctx context.Context, in *MsgCreateSocialConnection, opts ...grpc.CallOption) (*MsgCreateSocialConnectionResponse, error)
+	// UpdateSocialConnection defines the UpdateSocialConnection RPC.
+	UpdateSocialConnection(ctx context.Context, in *MsgUpdateSocialConnection, opts ...grpc.CallOption) (*MsgUpdateSocialConnectionResponse, error)
+	// DeleteSocialConnection defines the DeleteSocialConnection RPC.
+	DeleteSocialConnection(ctx context.Context, in *MsgDeleteSocialConnection, opts ...grpc.CallOption) (*MsgDeleteSocialConnectionResponse, error)
 }
 
 type msgClient struct {
@@ -1390,6 +1727,33 @@ func (c *msgClient) DeleteComment(ctx context.Context, in *MsgDeleteComment, opt
 	return out, nil
 }
 
+func (c *msgClient) CreateSocialConnection(ctx context.Context, in *MsgCreateSocialConnection, opts ...grpc.CallOption) (*MsgCreateSocialConnectionResponse, error) {
+	out := new(MsgCreateSocialConnectionResponse)
+	err := c.cc.Invoke(ctx, "/nlg.socialmedia.v1.Msg/CreateSocialConnection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateSocialConnection(ctx context.Context, in *MsgUpdateSocialConnection, opts ...grpc.CallOption) (*MsgUpdateSocialConnectionResponse, error) {
+	out := new(MsgUpdateSocialConnectionResponse)
+	err := c.cc.Invoke(ctx, "/nlg.socialmedia.v1.Msg/UpdateSocialConnection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) DeleteSocialConnection(ctx context.Context, in *MsgDeleteSocialConnection, opts ...grpc.CallOption) (*MsgDeleteSocialConnectionResponse, error) {
+	out := new(MsgDeleteSocialConnectionResponse)
+	err := c.cc.Invoke(ctx, "/nlg.socialmedia.v1.Msg/DeleteSocialConnection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
@@ -1413,6 +1777,12 @@ type MsgServer interface {
 	UpdateComment(context.Context, *MsgUpdateComment) (*MsgUpdateCommentResponse, error)
 	// DeleteComment defines the DeleteComment RPC.
 	DeleteComment(context.Context, *MsgDeleteComment) (*MsgDeleteCommentResponse, error)
+	// CreateSocialConnection defines the CreateSocialConnection RPC.
+	CreateSocialConnection(context.Context, *MsgCreateSocialConnection) (*MsgCreateSocialConnectionResponse, error)
+	// UpdateSocialConnection defines the UpdateSocialConnection RPC.
+	UpdateSocialConnection(context.Context, *MsgUpdateSocialConnection) (*MsgUpdateSocialConnectionResponse, error)
+	// DeleteSocialConnection defines the DeleteSocialConnection RPC.
+	DeleteSocialConnection(context.Context, *MsgDeleteSocialConnection) (*MsgDeleteSocialConnectionResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -1448,6 +1818,15 @@ func (*UnimplementedMsgServer) UpdateComment(ctx context.Context, req *MsgUpdate
 }
 func (*UnimplementedMsgServer) DeleteComment(ctx context.Context, req *MsgDeleteComment) (*MsgDeleteCommentResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteComment not implemented")
+}
+func (*UnimplementedMsgServer) CreateSocialConnection(ctx context.Context, req *MsgCreateSocialConnection) (*MsgCreateSocialConnectionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSocialConnection not implemented")
+}
+func (*UnimplementedMsgServer) UpdateSocialConnection(ctx context.Context, req *MsgUpdateSocialConnection) (*MsgUpdateSocialConnectionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSocialConnection not implemented")
+}
+func (*UnimplementedMsgServer) DeleteSocialConnection(ctx context.Context, req *MsgDeleteSocialConnection) (*MsgDeleteSocialConnectionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteSocialConnection not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -1634,6 +2013,60 @@ func _Msg_DeleteComment_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateSocialConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateSocialConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateSocialConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nlg.socialmedia.v1.Msg/CreateSocialConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateSocialConnection(ctx, req.(*MsgCreateSocialConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateSocialConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateSocialConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateSocialConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nlg.socialmedia.v1.Msg/UpdateSocialConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateSocialConnection(ctx, req.(*MsgUpdateSocialConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_DeleteSocialConnection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgDeleteSocialConnection)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).DeleteSocialConnection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nlg.socialmedia.v1.Msg/DeleteSocialConnection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).DeleteSocialConnection(ctx, req.(*MsgDeleteSocialConnection))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Msg_serviceDesc = _Msg_serviceDesc
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "nlg.socialmedia.v1.Msg",
@@ -1678,6 +2111,18 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteComment",
 			Handler:    _Msg_DeleteComment_Handler,
+		},
+		{
+			MethodName: "CreateSocialConnection",
+			Handler:    _Msg_CreateSocialConnection_Handler,
+		},
+		{
+			MethodName: "UpdateSocialConnection",
+			Handler:    _Msg_UpdateSocialConnection_Handler,
+		},
+		{
+			MethodName: "DeleteSocialConnection",
+			Handler:    _Msg_DeleteSocialConnection_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -2473,6 +2918,224 @@ func (m *MsgDeleteCommentResponse) MarshalToSizedBuffer(dAtA []byte) (int, error
 	return len(dAtA) - i, nil
 }
 
+func (m *MsgCreateSocialConnection) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateSocialConnection) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateSocialConnection) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Timestamp != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Timestamp))
+		i--
+		dAtA[i] = 0x28
+	}
+	if len(m.Following) > 0 {
+		i -= len(m.Following)
+		copy(dAtA[i:], m.Following)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Following)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Follower) > 0 {
+		i -= len(m.Follower)
+		copy(dAtA[i:], m.Follower)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Follower)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgCreateSocialConnectionResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgCreateSocialConnectionResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgCreateSocialConnectionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateSocialConnection) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateSocialConnection) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateSocialConnection) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Timestamp != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Timestamp))
+		i--
+		dAtA[i] = 0x28
+	}
+	if len(m.Following) > 0 {
+		i -= len(m.Following)
+		copy(dAtA[i:], m.Following)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Following)))
+		i--
+		dAtA[i] = 0x22
+	}
+	if len(m.Follower) > 0 {
+		i -= len(m.Follower)
+		copy(dAtA[i:], m.Follower)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Follower)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgUpdateSocialConnectionResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgUpdateSocialConnectionResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgUpdateSocialConnectionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteSocialConnection) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteSocialConnection) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteSocialConnection) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Index) > 0 {
+		i -= len(m.Index)
+		copy(dAtA[i:], m.Index)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Index)))
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgDeleteSocialConnectionResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgDeleteSocialConnectionResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgDeleteSocialConnectionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintTx(dAtA []byte, offset int, v uint64) int {
 	offset -= sovTx(v)
 	base := offset
@@ -2842,6 +3505,106 @@ func (m *MsgDeleteComment) Size() (n int) {
 }
 
 func (m *MsgDeleteCommentResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgCreateSocialConnection) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Follower)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Following)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Timestamp != 0 {
+		n += 1 + sovTx(uint64(m.Timestamp))
+	}
+	return n
+}
+
+func (m *MsgCreateSocialConnectionResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgUpdateSocialConnection) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Follower)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Following)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.Timestamp != 0 {
+		n += 1 + sovTx(uint64(m.Timestamp))
+	}
+	return n
+}
+
+func (m *MsgUpdateSocialConnectionResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	return n
+}
+
+func (m *MsgDeleteSocialConnection) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	l = len(m.Index)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	return n
+}
+
+func (m *MsgDeleteSocialConnectionResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -5278,6 +6041,664 @@ func (m *MsgDeleteCommentResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgDeleteCommentResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateSocialConnection) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateSocialConnection: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateSocialConnection: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Follower", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Follower = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Following", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Following = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Timestamp", wireType)
+			}
+			m.Timestamp = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Timestamp |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgCreateSocialConnectionResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgCreateSocialConnectionResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgCreateSocialConnectionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateSocialConnection) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateSocialConnection: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateSocialConnection: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Follower", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Follower = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Following", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Following = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Timestamp", wireType)
+			}
+			m.Timestamp = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Timestamp |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgUpdateSocialConnectionResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgUpdateSocialConnectionResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgUpdateSocialConnectionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteSocialConnection) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteSocialConnection: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteSocialConnection: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Index = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgDeleteSocialConnectionResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgDeleteSocialConnectionResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgDeleteSocialConnectionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

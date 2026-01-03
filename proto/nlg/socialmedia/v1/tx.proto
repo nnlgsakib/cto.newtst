@@ -44,6 +44,15 @@ service Msg {
 
   // DeleteComment defines the DeleteComment RPC.
   rpc DeleteComment(MsgDeleteComment) returns (MsgDeleteCommentResponse);
+
+  // CreateSocialConnection defines the CreateSocialConnection RPC.
+  rpc CreateSocialConnection(MsgCreateSocialConnection) returns (MsgCreateSocialConnectionResponse);
+
+  // UpdateSocialConnection defines the UpdateSocialConnection RPC.
+  rpc UpdateSocialConnection(MsgUpdateSocialConnection) returns (MsgUpdateSocialConnectionResponse);
+
+  // DeleteSocialConnection defines the DeleteSocialConnection RPC.
+  rpc DeleteSocialConnection(MsgDeleteSocialConnection) returns (MsgDeleteSocialConnectionResponse);
 }
 
 // MsgUpdateParams is the Msg/UpdateParams request type.
@@ -186,3 +195,39 @@ message MsgDeleteComment {
 
 // MsgDeleteCommentResponse defines the MsgDeleteCommentResponse message.
 message MsgDeleteCommentResponse {}
+
+// MsgCreateSocialConnection defines the MsgCreateSocialConnection message.
+message MsgCreateSocialConnection {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string index = 2;
+  string follower = 3;
+  string following = 4;
+  uint64 timestamp = 5;
+}
+
+// MsgCreateSocialConnectionResponse defines the MsgCreateSocialConnectionResponse message.
+message MsgCreateSocialConnectionResponse {}
+
+// MsgUpdateSocialConnection defines the MsgUpdateSocialConnection message.
+message MsgUpdateSocialConnection {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string index = 2;
+  string follower = 3;
+  string following = 4;
+  uint64 timestamp = 5;
+}
+
+// MsgUpdateSocialConnectionResponse defines the MsgUpdateSocialConnectionResponse message.
+message MsgUpdateSocialConnectionResponse {}
+
+// MsgDeleteSocialConnection defines the MsgDeleteSocialConnection message.
+message MsgDeleteSocialConnection {
+  option (cosmos.msg.v1.signer) = "creator";
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  string index = 2;
+}
+
+// MsgDeleteSocialConnectionResponse defines the MsgDeleteSocialConnectionResponse message.
+message MsgDeleteSocialConnectionResponse {}

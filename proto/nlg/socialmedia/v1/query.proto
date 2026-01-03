@@ -10,6 +10,7 @@ import "nlg/socialmedia/v1/comment.proto";
 import "nlg/socialmedia/v1/params.proto";
 import "nlg/socialmedia/v1/post.proto";
 import "nlg/socialmedia/v1/profile.proto";
+import "nlg/socialmedia/v1/social_connection.proto";
 
 option go_package = "nlg/x/socialmedia/types";
 
@@ -48,6 +49,16 @@ service Query {
   // ListComment defines the ListComment RPC.
   rpc ListComment(QueryAllCommentRequest) returns (QueryAllCommentResponse) {
     option (google.api.http).get = "/nlg/socialmedia/v1/comment";
+  }
+
+  // ListSocialConnection Queries a list of SocialConnection items.
+  rpc GetSocialConnection(QueryGetSocialConnectionRequest) returns (QueryGetSocialConnectionResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/social_connection/{index}";
+  }
+
+  // ListSocialConnection defines the ListSocialConnection RPC.
+  rpc ListSocialConnection(QueryAllSocialConnectionRequest) returns (QueryAllSocialConnectionResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/social_connection";
   }
 }
 
@@ -123,5 +134,26 @@ message QueryAllCommentRequest {
 // QueryAllCommentResponse defines the QueryAllCommentResponse message.
 message QueryAllCommentResponse {
   repeated Comment comment = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryGetSocialConnectionRequest defines the QueryGetSocialConnectionRequest message.
+message QueryGetSocialConnectionRequest {
+  string index = 1;
+}
+
+// QueryGetSocialConnectionResponse defines the QueryGetSocialConnectionResponse message.
+message QueryGetSocialConnectionResponse {
+  SocialConnection social_connection = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllSocialConnectionRequest defines the QueryAllSocialConnectionRequest message.
+message QueryAllSocialConnectionRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllSocialConnectionResponse defines the QueryAllSocialConnectionResponse message.
+message QueryAllSocialConnectionResponse {
+  repeated SocialConnection social_connection = 1 [(gogoproto.nullable) = false];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }

@@ -32,6 +32,10 @@ func (AppModule) GenerateGenesisState(simState *module.SimulationState) {
 			Index: "0",
 		}, {Creator: sample.AccAddress(),
 			Index: "1",
+		}}, SocialConnectionMap: []types.SocialConnection{{Creator: sample.AccAddress(),
+			Index: "0",
+		}, {Creator: sample.AccAddress(),
+			Index: "1",
 		}}}
 	simState.GenState[types.ModuleName] = simState.Cdc.MustMarshalJSON(&socialmediaGenesis)
 }
@@ -176,6 +180,51 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgDeleteComment,
 		socialmediasimulation.SimulateMsgDeleteComment(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgCreateSocialConnection          = "op_weight_msg_socialmedia"
+		defaultWeightMsgCreateSocialConnection int = 100
+	)
+
+	var weightMsgCreateSocialConnection int
+	simState.AppParams.GetOrGenerate(opWeightMsgCreateSocialConnection, &weightMsgCreateSocialConnection, nil,
+		func(_ *rand.Rand) {
+			weightMsgCreateSocialConnection = defaultWeightMsgCreateSocialConnection
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCreateSocialConnection,
+		socialmediasimulation.SimulateMsgCreateSocialConnection(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgUpdateSocialConnection          = "op_weight_msg_socialmedia"
+		defaultWeightMsgUpdateSocialConnection int = 100
+	)
+
+	var weightMsgUpdateSocialConnection int
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateSocialConnection, &weightMsgUpdateSocialConnection, nil,
+		func(_ *rand.Rand) {
+			weightMsgUpdateSocialConnection = defaultWeightMsgUpdateSocialConnection
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgUpdateSocialConnection,
+		socialmediasimulation.SimulateMsgUpdateSocialConnection(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
+	))
+	const (
+		opWeightMsgDeleteSocialConnection          = "op_weight_msg_socialmedia"
+		defaultWeightMsgDeleteSocialConnection int = 100
+	)
+
+	var weightMsgDeleteSocialConnection int
+	simState.AppParams.GetOrGenerate(opWeightMsgDeleteSocialConnection, &weightMsgDeleteSocialConnection, nil,
+		func(_ *rand.Rand) {
+			weightMsgDeleteSocialConnection = defaultWeightMsgDeleteSocialConnection
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgDeleteSocialConnection,
+		socialmediasimulation.SimulateMsgDeleteSocialConnection(am.authKeeper, am.bankKeeper, am.keeper, simState.TxConfig),
 	))
 
 	return operations

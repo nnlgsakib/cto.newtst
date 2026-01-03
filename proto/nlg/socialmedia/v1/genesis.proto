@@ -8,6 +8,7 @@ import "nlg/socialmedia/v1/comment.proto";
 import "nlg/socialmedia/v1/params.proto";
 import "nlg/socialmedia/v1/post.proto";
 import "nlg/socialmedia/v1/profile.proto";
+import "nlg/socialmedia/v1/social_connection.proto";
 
 option go_package = "nlg/x/socialmedia/types";
 
@@ -21,4 +22,5 @@ message GenesisState {
   repeated Post post_map = 2 [(gogoproto.nullable) = false];
   repeated Profile profile_map = 3 [(gogoproto.nullable) = false];
   repeated Comment comment_map = 4 [(gogoproto.nullable) = false];
+  repeated SocialConnection social_connection_map = 5 [(gogoproto.nullable) = false];
 }

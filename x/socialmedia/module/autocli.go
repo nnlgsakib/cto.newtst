@@ -53,6 +53,18 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Alias:          []string{"show-comment"},
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
+				{
+					RpcMethod: "ListSocialConnection",
+					Use:       "list-social-connection",
+					Short:     "List all socialConnection",
+				},
+				{
+					RpcMethod:      "GetSocialConnection",
+					Use:            "get-social-connection [id]",
+					Short:          "Gets a socialConnection",
+					Alias:          []string{"show-social-connection"},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -116,6 +128,24 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod:      "DeleteComment",
 					Use:            "delete-comment [index]",
 					Short:          "Delete comment",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
+				{
+					RpcMethod:      "CreateSocialConnection",
+					Use:            "create-social-connection [index] [follower] [following] [timestamp]",
+					Short:          "Create a new socialConnection",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "follower"}, {ProtoField: "following"}, {ProtoField: "timestamp"}},
+				},
+				{
+					RpcMethod:      "UpdateSocialConnection",
+					Use:            "update-social-connection [index] [follower] [following] [timestamp]",
+					Short:          "Update socialConnection",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "follower"}, {ProtoField: "following"}, {ProtoField: "timestamp"}},
+				},
+				{
+					RpcMethod:      "DeleteSocialConnection",
+					Use:            "delete-social-connection [index]",
+					Short:          "Delete socialConnection",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx

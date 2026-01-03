@@ -6,7 +6,7 @@ import "fmt"
 func DefaultGenesis() *GenesisState {
 	return &GenesisState{
 		Params:  DefaultParams(),
-		PostMap: []Post{}, ProfileMap: []Profile{}, CommentMap: []Comment{}}
+		PostMap: []Post{}, ProfileMap: []Profile{}, CommentMap: []Comment{}, SocialConnectionMap: []SocialConnection{}}
 }
 
 // Validate performs basic genesis state validation returning an error upon any
@@ -38,6 +38,15 @@ func (gs GenesisState) Validate() error {
 			return fmt.Errorf("duplicated index for comment")
 		}
 		commentIndexMap[index] = struct{}{}
+	}
+	socialConnectionIndexMap := make(map[string]struct{})
+
+	for _, elem := range gs.SocialConnectionMap {
+		index := fmt.Sprint(elem.Index)
+		if _, ok := socialConnectionIndexMap[index]; ok {
+			return fmt.Errorf("duplicated index for socialConnection")
+		}
+		socialConnectionIndexMap[index] = struct{}{}
 	}
 
 	return gs.Params.Validate()
