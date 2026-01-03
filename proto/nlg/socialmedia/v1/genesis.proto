@@ -4,6 +4,7 @@ package nlg.socialmedia.v1;
 
 import "amino/amino.proto";
 import "gogoproto/gogo.proto";
+import "nlg/socialmedia/v1/comment.proto";
 import "nlg/socialmedia/v1/params.proto";
 import "nlg/socialmedia/v1/post.proto";
 import "nlg/socialmedia/v1/profile.proto";
@@ -19,4 +20,5 @@ message GenesisState {
   ];
   repeated Post post_map = 2 [(gogoproto.nullable) = false];
   repeated Profile profile_map = 3 [(gogoproto.nullable) = false];
+  repeated Comment comment_map = 4 [(gogoproto.nullable) = false];
 }

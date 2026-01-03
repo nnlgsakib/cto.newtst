@@ -41,6 +41,18 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Alias:          []string{"show-profile"},
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
+				{
+					RpcMethod: "ListComment",
+					Use:       "list-comment",
+					Short:     "List all comment",
+				},
+				{
+					RpcMethod:      "GetComment",
+					Use:            "get-comment [id]",
+					Short:          "Gets a comment",
+					Alias:          []string{"show-comment"},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
@@ -86,6 +98,24 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					RpcMethod:      "DeleteProfile",
 					Use:            "delete-profile [index]",
 					Short:          "Delete profile",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
+				{
+					RpcMethod:      "CreateComment",
+					Use:            "create-comment [index] [post-id] [content] [timestamp] [author]",
+					Short:          "Create a new comment",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "post_id"}, {ProtoField: "content"}, {ProtoField: "timestamp"}, {ProtoField: "author"}},
+				},
+				{
+					RpcMethod:      "UpdateComment",
+					Use:            "update-comment [index] [post-id] [content] [timestamp] [author]",
+					Short:          "Update comment",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}, {ProtoField: "post_id"}, {ProtoField: "content"}, {ProtoField: "timestamp"}, {ProtoField: "author"}},
+				},
+				{
+					RpcMethod:      "DeleteComment",
+					Use:            "delete-comment [index]",
+					Short:          "Delete comment",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
 				},
 				// this line is used by ignite scaffolding # autocli/tx

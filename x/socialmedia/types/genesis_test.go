@@ -21,7 +21,7 @@ func TestGenesisState_Validate(t *testing.T) {
 		},
 		{
 			desc:     "valid genesis state",
-			genState: &types.GenesisState{PostMap: []types.Post{{Index: "0"}, {Index: "1"}}, ProfileMap: []types.Profile{{Index: "0"}, {Index: "1"}}},
+			genState: &types.GenesisState{PostMap: []types.Post{{Index: "0"}, {Index: "1"}}, ProfileMap: []types.Profile{{Index: "0"}, {Index: "1"}}, CommentMap: []types.Comment{{Index: "0"}, {Index: "1"}}},
 			valid:    true,
 		}, {
 			desc: "duplicated post",
@@ -34,12 +34,25 @@ func TestGenesisState_Validate(t *testing.T) {
 						Index: "0",
 					},
 				},
-				ProfileMap: []types.Profile{{Index: "0"}, {Index: "1"}}},
+				ProfileMap: []types.Profile{{Index: "0"}, {Index: "1"}}, CommentMap: []types.Comment{{Index: "0"}, {Index: "1"}}},
 			valid: false,
 		}, {
 			desc: "duplicated profile",
 			genState: &types.GenesisState{
 				ProfileMap: []types.Profile{
+					{
+						Index: "0",
+					},
+					{
+						Index: "0",
+					},
+				},
+				CommentMap: []types.Comment{{Index: "0"}, {Index: "1"}}},
+			valid: false,
+		}, {
+			desc: "duplicated comment",
+			genState: &types.GenesisState{
+				CommentMap: []types.Comment{
 					{
 						Index: "0",
 					},

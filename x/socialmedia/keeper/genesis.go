@@ -18,6 +18,11 @@ func (k Keeper) InitGenesis(ctx context.Context, genState types.GenesisState) er
 			return err
 		}
 	}
+	for _, elem := range genState.CommentMap {
+		if err := k.Comment.Set(ctx, elem.Index, elem); err != nil {
+			return err
+		}
+	}
 
 	return k.Params.Set(ctx, genState.Params)
 }
@@ -39,6 +44,12 @@ func (k Keeper) ExportGenesis(ctx context.Context) (*types.GenesisState, error) 
 	}
 	if err := k.Profile.Walk(ctx, nil, func(_ string, val types.Profile) (stop bool, err error) {
 		genesis.ProfileMap = append(genesis.ProfileMap, val)
+		return false, nil
+	}); err != nil {
+		return nil, err
+	}
+	if err := k.Comment.Walk(ctx, nil, func(_ string, val types.Comment) (stop bool, err error) {
+		genesis.CommentMap = append(genesis.CommentMap, val)
 		return false, nil
 	}); err != nil {
 		return nil, err

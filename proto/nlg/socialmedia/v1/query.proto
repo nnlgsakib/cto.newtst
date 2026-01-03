@@ -6,6 +6,7 @@ import "amino/amino.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
+import "nlg/socialmedia/v1/comment.proto";
 import "nlg/socialmedia/v1/params.proto";
 import "nlg/socialmedia/v1/post.proto";
 import "nlg/socialmedia/v1/profile.proto";
@@ -37,6 +38,16 @@ service Query {
   // ListProfile defines the ListProfile RPC.
   rpc ListProfile(QueryAllProfileRequest) returns (QueryAllProfileResponse) {
     option (google.api.http).get = "/nlg/socialmedia/v1/profile";
+  }
+
+  // ListComment Queries a list of Comment items.
+  rpc GetComment(QueryGetCommentRequest) returns (QueryGetCommentResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/comment/{index}";
+  }
+
+  // ListComment defines the ListComment RPC.
+  rpc ListComment(QueryAllCommentRequest) returns (QueryAllCommentResponse) {
+    option (google.api.http).get = "/nlg/socialmedia/v1/comment";
   }
 }
 
@@ -91,5 +102,26 @@ message QueryAllProfileRequest {
 // QueryAllProfileResponse defines the QueryAllProfileResponse message.
 message QueryAllProfileResponse {
   repeated Profile profile = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// QueryGetCommentRequest defines the QueryGetCommentRequest message.
+message QueryGetCommentRequest {
+  string index = 1;
+}
+
+// QueryGetCommentResponse defines the QueryGetCommentResponse message.
+message QueryGetCommentResponse {
+  Comment comment = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryAllCommentRequest defines the QueryAllCommentRequest message.
+message QueryAllCommentRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+// QueryAllCommentResponse defines the QueryAllCommentResponse message.
+message QueryAllCommentResponse {
+  repeated Comment comment = 1 [(gogoproto.nullable) = false];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
