@@ -1,16 +1,17 @@
 package docs
 
 import (
-	"embed"
-	httptemplate "html/template"
-	"net/http"
+    "embed"
+    httptemplate "html/template"
+    "net/http"
 
-	"github.com/gorilla/mux"
+    "github.com/gorilla/mux"
 )
 
 const (
-	apiFile   = "/static/openapi.json"
-	indexFile = "template/index.tpl"
+    apiFile      = "/static/openapi.json"
+    indexFile    = "template/index.tpl"
+    dashboardFile = "template/dashboard.tpl"
 )
 
 //go:embed static
@@ -20,21 +21,35 @@ var Static embed.FS
 var template embed.FS
 
 func RegisterOpenAPIService(appName string, rtr *mux.Router) {
-	rtr.Handle(apiFile, http.FileServer(http.FS(Static)))
-	rtr.HandleFunc("/", handler(appName))
+    rtr.Handle(apiFile, http.FileServer(http.FS(Static)))
+    rtr.HandleFunc("/", handler(appName))
+    rtr.HandleFunc("/dashboard", dashboardHandler())
 }
 
 // handler returns an http handler that servers OpenAPI console for an OpenAPI spec at specURL.
 func handler(title string) http.HandlerFunc {
-	t, _ := httptemplate.ParseFS(template, indexFile)
+    t, _ := httptemplate.ParseFS(template, indexFile)
 
-	return func(w http.ResponseWriter, req *http.Request) {
-		_ = t.Execute(w, struct {
-			Title string
-			URL   string
-		}{
-			title,
-			apiFile,
-		})
-	}
+    return func(w http.ResponseWriter, req *http.Request) {
+        _ = t.Execute(w, struct {
+            Title string
+            URL   string
+        }{
+            title,
+            apiFile,
+        })
+    }
+}
+
+// dashboardHandler returns an http handler that servers the NLG dashboard UI.
+func dashboardHandler() http.HandlerFunc {
+    t, _ := httptemplate.ParseFS(template, dashboardFile)
+
+    return func(w http.ResponseWriter, req *http.Request) {
+        _ = t.Execute(w, struct {
+            Title string
+        }{
+            "NLG Chain Dashboard",
+        })
+    }
 }
